@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MausBot Store — 19.000đ</title>
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--txt:#f8fafc;--acc:#22c55e}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--txt)}
+.wrap{max-width:900px;margin:0 auto;padding:32px 20px}
+h1{font-size:36px;line-height:1.1;margin:16px 0}
+.card{background:var(--card);border-radius:16px;padding:24px;margin:16px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#052e16;font-weight:800;padding:14px 22px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn2{background:#e2e8f0;color:#0f172a}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}h1{font-size:28px}}
+.small{color:#cbd5e1;font-size:14px;line-height:1.6}
+.price{font-size:32px;font-weight:900;color:var(--acc)}
+ol{padding-left:20px;line-height:1.7}
+.hidden{display:none}
+input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:white}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<p class="small">MAUSBOT STORE • BÁN TRỰC TIẾP, KHÔNG QUA SÀN</p>
+<h1>Bộ 20 Prompts Kiếm 1000đ Đầu Tiên Với AI</h1>
+<p class="small">Copy-paste viết bài bán hàng, tìm khách, đăng mỗi ngày. Giá chỉ <b style="color:#22c55e">19.000đ</b>.</p>
+</header>
+<div class="grid">
+<div class="card">
+<div class="price">19.000đ</div>
+<p class="small">Nhận file ngay sau chuyển khoản. 1 đơn là xong mục tiêu 1.000đ.</p>
+<button class="btn" onclick="document.getElementById('buy').classList.toggle('hidden')">MUA NGAY</button>
+<button class="btn btn2" onclick="document.getElementById('view').classList.toggle('hidden')">Xem nội dung</button>
+</div>
+<div class="card" id="buy" class="hidden">
+<h3>Thanh toán trực tiếp</h3>
+<p class="small">Để trống — bạn chủ sẽ dán số tài khoản của bạn vào đây. Khách chuyển khoản xong nhắn Zalo để nhận file. Không qua bên thứ 3 nào khác, tiền về thẳng tài khoản của bạn.</p>
+<p class="small">Mẫu nội dung chuyển khoản: <b>MAUS 19K + tên của khách</b></p>
+<label class="small">Tên / Zalo của khách</label><br><input id="name" placeholder="VD: Nguyen Van A"><br><br>
+<button class="btn" onclick="done()">Đã chuyển khoản — lấy file</button>
+<p id="ok" class="small hidden">✅ Đã ghi nhận. Bạn chủ sẽ gửi file .md qua Zalo trong 5 phút.</p>
+</div>
+</div>
+<div class="card hidden" id="view">
+<h3>Bạn nhận được gì?</h3>
+<ol>
+<li>7 bài đăng bán hàng cho 1 tuần</li><li>5 tin nhắn tìm khách không spam</li><li>Bảng giá 3 gói + ưu đãi</li><li>Lịch đăng 30 ngày</li><li>Xử lý từ chối, follow-up 3 ngày</li><li>Text bán hàng copy-paste</li>
+</ol>
+<p class="small">* Đây là file tĩnh 100% không cần tổ chức thứ 3 — mở là xem được, up lên GitHub Pages / hosting nào cũng được, không cần Gumroad/Etsy.</p>
+</div>
+<div class="card">
+<h3>Cách bạn (chủ) triển khai — 2 phút</h3>
+<p class="small">1. Thay dòng "Để trống" ở trên bằng số tài khoản của bạn.<br>2. Upload file này lên hosting của bạn hoặc gửi link file.<br>3. Gửi link cho khách, khách chuyển khoản trực tiếp, bạn gửi file .md đã làm.</p>
+<p class="small"><i>Web này không tự nhận tiền, không tự có khách. Nó chỉ là mặt tiền 100% là của bạn, không qua sàn.</i></p>
+</div>
+<p class="small">© MausBot làm cho bạn — 100% mã nội bộ, không script bên thứ 3.</p>
+</div>
+<script>
+function done(){
+ const n=document.getElementById('name').value.trim()||'Khách';
+ document.getElementById('ok').textContent='✅ Cảm ơn '+n+'! Bạn chủ sẽ gửi file Bộ 20 Prompts trong 5 phút.';
+ document.getElementById('ok').classList.remove('hidden');
+}
+</script>
+</body>
+</html>
